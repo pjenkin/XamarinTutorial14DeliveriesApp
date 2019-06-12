@@ -13,6 +13,9 @@ namespace DeliveriesApp.Droid
     public class MainActivity : AppCompatActivity
     {
 
+        EditText emailEditText, passwordEditText;
+        Button signInButton, registerButton;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,6 +26,26 @@ namespace DeliveriesApp.Droid
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
+            // Leave-be all this boilerplate stuff for now - I dont want to risk breaking anything
+
+            emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
+            passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
+            signInButton = FindViewById<Button>(Resource.Id.signinButton);
+            registerButton = FindViewById<Button>(Resource.Id.registerButton);
+            // NB v similar to Java code for Android
+
+            signInButton.Click += SignInButton_Click;          // NB autocomplete after '+='
+            registerButton.Click += RegisterButton_Click;
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            // throw new NotImplementedException();
+        }
+
+        private void SignInButton_Click(object sender, EventArgs e)
+        {
+            // throw new NotImplementedException();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
