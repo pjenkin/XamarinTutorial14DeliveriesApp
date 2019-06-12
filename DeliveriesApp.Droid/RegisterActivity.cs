@@ -35,6 +35,8 @@ namespace DeliveriesApp.Droid
             // ... and sort out an event handler
             registerButton.Click += RegisterButton_Click;
 
+            string email = Intent.GetStringExtra("email");      // receive PutExtra'd data
+            emailEditText.Text = email;                         // write any data which may've been typed in previous screen
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

@@ -43,7 +43,8 @@ namespace DeliveriesApp.Droid
         {
             // throw new NotImplementedException();
             var intent = new Intent(this, typeof(RegisterActivity));    // intent for navigating to Register Activity/page
-            StartActivity(intent);
+            intent.PutExtra("email",emailEditText.Text);                // pass any email entry data which may've been typed
+            StartActivity(intent);                                      // catch PutExtra'd data in GetStringExtra in OnCreate of RegisterActivity
         }
 
         private void SignInButton_Click(object sender, EventArgs e)
