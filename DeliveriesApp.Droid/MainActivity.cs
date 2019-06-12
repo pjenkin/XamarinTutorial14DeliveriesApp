@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -41,6 +42,8 @@ namespace DeliveriesApp.Droid
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             // throw new NotImplementedException();
+            var intent = new Intent(this, typeof(RegisterActivity));    // intent for navigating to Register Activity/page
+            StartActivity(intent);
         }
 
         private void SignInButton_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace DeliveriesApp.Droid
             emailEditText = FindViewById<EditText>(Resource.Id.registerEmailEditText);
             passwordEditText = FindViewById<EditText>(Resource.Id.registerPasswordEditText);
             confirmPasswordEditText = FindViewById<EditText>(Resource.Id.registerConfirmPasswordEditText);
-            registerButton = FindViewById<Button>(Resource.Id.registerButton);
+            registerButton = FindViewById<Button>(Resource.Id.registerUserButton);
 
             // ... and sort out an event handler
             registerButton.Click += RegisterButton_Click;
@@ -39,7 +39,7 @@ namespace DeliveriesApp.Droid
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }
