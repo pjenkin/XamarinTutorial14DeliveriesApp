@@ -24,15 +24,11 @@ namespace DeliveriesApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton registerButton { get; set; }
+        UIKit.UIButton registerButton1 { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton signinButton { get; set; }
-
-        [Action ("RegisterButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void RegisterButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -46,26 +42,14 @@ namespace DeliveriesApp.iOS
                 passwordText = null;
             }
 
-            if (registerButton != null) {
-                registerButton.Dispose ();
-                registerButton = null;
+            if (registerButton1 != null) {
+                registerButton1.Dispose ();
+                registerButton1 = null;
             }
 
             if (signinButton != null) {
                 signinButton.Dispose ();
                 signinButton = null;
-            }
-        }
-
-        // NB type 'override' & intellisense will help
-        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
-        {
-            base.PrepareForSegue(segue, sender);
-            // This code is specifically for the register segue
-            if (segue.Identifier == "registerSegue")       // segue Identifier set by storyboard & properties
-            {
-                var destinationViewController = segue.DestinationViewController as RegisterViewController;
-                destinationViewController.emailData = emailTextField.Text;
             }
         }
     }

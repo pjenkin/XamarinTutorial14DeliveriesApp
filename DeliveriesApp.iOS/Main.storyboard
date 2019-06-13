@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4828">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,71 +17,63 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="220" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your password please">
-                                <rect key="frame" x="20" y="329.5" width="339" height="30"/>
+                                <rect key="frame" x="20" y="171" width="284" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="221" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your email address please" misplaced="YES">
-                                <rect key="frame" x="24" y="450" width="1326" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="221" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write your email address please">
+                                <rect key="frame" x="20" y="117" width="284" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="222" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="377.5" width="339" height="30"/>
+                                <rect key="frame" x="20" y="225" width="284" height="30"/>
                                 <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.098039215686274508" green="0.6" blue="0.83137254901960789" alpha="1"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="223" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="279" y="440" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9610" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="224" y="292" width="80" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <action selector="RegisterButton_TouchUpInside:" destination="BYZ-38-t0r" id="5739" eventType="touchUpInside"/>
-                                    <segue id="8979" destination="8764" kind="show" identifier="registerSegue"/>
+                                    <action selector="RegisterButton_TouchUpInside:" destination="9612" id="9611" eventType="touchUpInside"/>
                                 </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TODO: Sort out constraints!" borderStyle="roundedRect" minimumFontSize="17" id="3670" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="24" y="545" width="97" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
                                 <constraints>
-                                    <constraint id="3674" firstAttribute="width" constant="97"/>
+                                    <constraint id="9651" firstAttribute="width" constant="80"/>
                                 </constraints>
-                            </textField>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint id="2636" firstItem="221" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="2637" firstItem="221" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
-                            <constraint id="2874" firstItem="220" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="2875" firstItem="220" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
-                            <constraint id="2876" firstItem="220" firstAttribute="top" secondItem="221" secondAttribute="bottom" constant="28"/>
-                            <constraint id="2877" firstItem="222" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="2878" firstItem="222" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
-                            <constraint id="2879" firstItem="222" firstAttribute="top" secondItem="220" secondAttribute="bottom" constant="18"/>
-                            <constraint id="2880" firstItem="223" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="2881" firstItem="223" firstAttribute="top" secondItem="222" secondAttribute="bottom" constant="33"/>
-                            <constraint id="3133" firstAttribute="centerY" secondItem="221" secondAttribute="centerY" constant="47"/>
-                            <constraint id="3672" firstItem="3670" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24"/>
-                            <constraint id="3673" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="3670" secondAttribute="bottom" constant="92"/>
+                            <constraint id="9270" firstItem="222" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="2"/>
+                            <constraint id="9271" firstItem="222" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY"/>
+                            <constraint id="9272" firstItem="222" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="9273" firstItem="222" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
+                            <constraint id="9277" firstItem="220" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
+                            <constraint id="9278" firstItem="220" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="9279" firstItem="222" firstAttribute="top" secondItem="220" secondAttribute="bottom" constant="24"/>
+                            <constraint id="9280" firstItem="221" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="9281" firstItem="221" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
+                            <constraint id="9282" firstItem="220" firstAttribute="top" secondItem="221" secondAttribute="bottom" constant="24"/>
+                            <constraint id="9655" firstItem="9610" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="9656" firstItem="9610" firstAttribute="top" secondItem="222" secondAttribute="centerY" constant="52"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="221" id="name-outlet-221"/>
                         <outlet property="passwordText" destination="220" id="name-outlet-220"/>
                         <outlet property="signinButton" destination="222" id="name-outlet-222"/>
-                        <outlet property="registerButton" destination="223" id="name-outlet-223"/>
+                        <outlet property="registerButton1" destination="9610" id="name-outlet-9610"/>
                     </connections>
                     <navigationItem title="Log In" id="4962" key="navigationItem"/>
                 </viewController>
@@ -93,7 +85,7 @@
             <objects>
                 <navigationController id="4828" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4830">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -112,36 +104,38 @@
                         <viewControllerLayoutGuide type="bottom" id="8762"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8765">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8768" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Please confirm password">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <rect key="frame" x="16" y="225" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8773" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Please enter password">
-                                <rect key="frame" x="16" y="264" width="343" height="30"/>
+                                <rect key="frame" x="16" y="171" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8777" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Please enter email address">
-                                <rect key="frame" x="16" y="214" width="343" height="30"/>
+                                <rect key="frame" x="16" y="121" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8781" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="279" y="363" width="80" height="30"/>
-                                <state key="normal" title="Register"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8781" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="293" width="288" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.15294117647058825" green="0.3843137254901961" blue="0.88627450980392153" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint id="8769" firstItem="8768" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
-                            <constraint id="8770" firstItem="8768" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY"/>
                             <constraint id="8771" firstItem="8768" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
                             <constraint id="8772" firstItem="8768" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
                             <constraint id="8774" firstItem="8773" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
@@ -151,12 +145,20 @@
                             <constraint id="8779" firstItem="8777" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
                             <constraint id="8780" firstItem="8773" firstAttribute="top" secondItem="8777" secondAttribute="bottom" constant="20"/>
                             <constraint id="8782" firstItem="8781" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
-                            <constraint id="8783" firstItem="8781" firstAttribute="top" secondItem="8768" secondAttribute="bottom" constant="15"/>
+                            <constraint id="9692" firstItem="8768" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
+                            <constraint id="9693" firstItem="8768" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY"/>
+                            <constraint id="9730" firstItem="8781" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
+                            <constraint id="9731" firstItem="8781" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
+                            <constraint id="9732" firstItem="8781" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
+                            <constraint id="9733" firstItem="8781" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
+                            <constraint id="9734" firstItem="8781" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY" constant="68"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="8777" id="name-outlet-8777"/>
                         <outlet property="passwordTextField" destination="8773" id="name-outlet-8773"/>
+                        <outlet property="confirmPasswordTextField" destination="8768" id="name-outlet-8768"/>
+                        <outlet property="registerButton" destination="8781" id="name-outlet-8781"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8766" userLabel="First Responder" sceneMemberID="firstResponder"/>

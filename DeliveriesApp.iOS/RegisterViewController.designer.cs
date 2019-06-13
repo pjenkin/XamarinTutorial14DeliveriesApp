@@ -14,9 +14,9 @@ namespace DeliveriesApp.iOS
     [Register ("RegisterViewController")]
     partial class RegisterViewController
     {
-
-        public string emailData;           // to receive data from email text field via a segue - public to be accessible from origin VC
-        // Ought this to be all initial caps EmailData since a public member??
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField confirmPasswordTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -26,8 +26,17 @@ namespace DeliveriesApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField passwordTextField { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton registerButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (confirmPasswordTextField != null) {
+                confirmPasswordTextField.Dispose ();
+                confirmPasswordTextField = null;
+            }
+
             if (emailTextField != null) {
                 emailTextField.Dispose ();
                 emailTextField = null;
@@ -37,13 +46,11 @@ namespace DeliveriesApp.iOS
                 passwordTextField.Dispose ();
                 passwordTextField = null;
             }
-        }
 
-        public override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-
-            emailTextField.Text = emailData;        // use data passed from segue
+            if (registerButton != null) {
+                registerButton.Dispose ();
+                registerButton = null;
+            }
         }
     }
 }
