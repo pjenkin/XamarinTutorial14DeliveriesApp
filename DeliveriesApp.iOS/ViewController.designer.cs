@@ -30,6 +30,10 @@ namespace DeliveriesApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton signinButton { get; set; }
 
+        [Action ("RegisterButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void RegisterButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (emailTextField != null) {

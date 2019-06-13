@@ -4,7 +4,7 @@ using UIKit;
 
 namespace DeliveriesApp.iOS
 {
-    public partial class RegisterViewController : UIView
+    public partial class RegisterViewController : UIViewController
     {
         public RegisterViewController (IntPtr handle) : base (handle)
         {
