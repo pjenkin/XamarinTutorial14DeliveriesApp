@@ -14,5 +14,43 @@ namespace DeliveriesApp.iOS
     [Register ("ViewController")]
     partial class ViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField emailTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField passwordText { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton registerButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton signinButton { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (emailTextField != null) {
+                emailTextField.Dispose ();
+                emailTextField = null;
+            }
+
+            if (passwordText != null) {
+                passwordText.Dispose ();
+                passwordText = null;
+            }
+
+            if (registerButton != null) {
+                registerButton.Dispose ();
+                registerButton = null;
+            }
+
+            if (signinButton != null) {
+                signinButton.Dispose ();
+                signinButton = null;
+            }
+        }
     }
 }
