@@ -14,6 +14,10 @@ namespace DeliveriesApp.iOS
     [Register ("RegisterViewController")]
     partial class RegisterViewController
     {
+
+        public string emailData;           // to receive data from email text field via a segue - public to be accessible from origin VC
+        // Ought this to be all initial caps EmailData since a public member??
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField emailTextField { get; set; }
@@ -33,6 +37,13 @@ namespace DeliveriesApp.iOS
                 passwordTextField.Dispose ();
                 passwordTextField = null;
             }
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            emailTextField.Text = emailData;        // use data passed from segue
         }
     }
 }

@@ -56,5 +56,17 @@ namespace DeliveriesApp.iOS
                 signinButton = null;
             }
         }
+
+        // NB type 'override' & intellisense will help
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            // This code is specifically for the register segue
+            if (segue.Identifier == "registerSegue")       // segue Identifier set by storyboard & properties
+            {
+                var destinationViewController = segue.DestinationViewController as RegisterViewController;
+                destinationViewController.emailData = emailTextField.Text;
+            }
+        }
     }
 }
