@@ -7,13 +7,16 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Microsoft.WindowsAzure.MobileServices;
+using NUnit;            // NUnit added as a test for whether visible from Droid project
+
 
 namespace DeliveriesApp.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://pnj-deliveryapp.azurewebsites.net");  // static variable for Azure access - copy from Overview of (Web) App Service in Azure portal
         EditText emailEditText, passwordEditText;
         Button signInButton, registerButton;
 

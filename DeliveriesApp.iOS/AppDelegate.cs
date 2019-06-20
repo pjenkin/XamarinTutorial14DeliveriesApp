@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -9,6 +10,7 @@ namespace DeliveriesApp.iOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://pnj-deliveryapp.azurewebsites.net");  // static variable for Azure access - copy from Overview of (Web) App Service in Azure portal
 
         public override UIWindow Window
         {
