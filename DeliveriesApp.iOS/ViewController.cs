@@ -22,9 +22,11 @@ namespace DeliveriesApp.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
+        /*
         partial void RegisterButton_TouchUpInside(UIButton sender)
         {
             //throw new NotImplementedException();
         }
+        */
     }
 }
