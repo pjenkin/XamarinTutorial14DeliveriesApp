@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -50,9 +51,30 @@ namespace DeliveriesApp.Droid
             StartActivity(intent);                                      // catch PutExtra'd data in GetStringExtra in OnCreate of RegisterActivity
         }
 
-        private void SignInButton_Click(object sender, EventArgs e)
+        private async void SignInButton_Click(object sender, EventArgs e)
         {
             // throw new NotImplementedException();
+            var email = emailEditText.Text;
+            var password = passwordEditText.Text;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                Toast.MakeText(this, "Both email and password must be entered", ToastLength.Long).Show();
+            }
+            else
+            {
+                var user = (await MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();      // null if no user in list
+                if (user?.Password == password)     // null conditional operator by PNJ
+                {
+                    Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
+                    // navigate to home page
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect user name or password", ToastLength.Long).Show();
+                    // navigate away if needed
+                }
+            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using System;
+using System.Linq;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -14,6 +15,41 @@ namespace DeliveriesApp.iOS
         {
             base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            signinButton.TouchUpInside += SigninButton_TouchUpInside;   // use += with TAB for boilerplate event handler method
+        }
+
+        private async void SigninButton_TouchUpInside(object sender, EventArgs e)
+        {
+            // throw new NotImplementedException();
+            var email = emailTextField.Text;
+            var password = passwordText.Text;
+            UIAlertController alert = null;     // no Toast in iOS!
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                alert = UIAlertController.Create("Login incomplete", "Both email and password must be entered", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            }
+            else
+            {
+                var user = (await AppDelegate.MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();      // null if no user in list
+                if (user?.Password == password)     // PNJ null conditional added
+                {
+                    //Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
+                    alert = UIAlertController.Create("Successful", "Welcome", UIAlertControllerStyle.Alert);
+                    alert.AddAction(UIAlertAction.Create("Thanks", UIAlertActionStyle.Default, null));
+                    // navigate to home page
+                }
+                else
+                {
+                    // Toast.MakeText(this, "Incorrect user name or password", ToastLength.Long).Show();
+                    alert = UIAlertController.Create("Failure", "Email or password is incorrect", UIAlertControllerStyle.Alert);
+                    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+                    // navigate away if needed
+                }
+            }
         }
 
         public override void DidReceiveMemoryWarning ()
