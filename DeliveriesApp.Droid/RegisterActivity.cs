@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
+using DeliveriesApp.Model;
+using System;
 
 namespace DeliveriesApp.Droid
 {
@@ -41,6 +36,17 @@ namespace DeliveriesApp.Droid
 
         private async void RegisterButton_Click(object sender, EventArgs e)
         {
+            var result = await User.Register(emailEditText.Text, passwordEditText.Text, confirmPasswordEditText.Text);
+
+            if (result)
+            {
+                Toast.MakeText(this, "User record successfully added", ToastLength.Long).Show();
+            }
+            else
+            {
+                Toast.MakeText(this, "Not registered - unsuccessful registration attempt", ToastLength.Long).Show();
+            }
+            /*
             if (!string.IsNullOrEmpty(passwordEditText.Text))
             {
                 if (passwordEditText.Text == confirmPasswordEditText.Text)
@@ -58,6 +64,7 @@ namespace DeliveriesApp.Droid
                 Toast.MakeText(this, "Passwords don't match", ToastLength.Long).Show();
             }
             Toast.MakeText(this, "Password must be enetered", ToastLength.Long).Show();
+            */
         }
     }
 }

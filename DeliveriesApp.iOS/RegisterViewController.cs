@@ -1,3 +1,4 @@
+using DeliveriesApp.Model;
 using Foundation;
 using System;
 using UIKit;
@@ -26,7 +27,25 @@ namespace DeliveriesApp.iOS
         // this handler method boilerplate added automatically when TAB'ing after += to add event handler
         private async void RegisterButton_TouchUpInside(object sender, EventArgs e)
         {
+            var result = await User.Register(emailTextField.Text, passwordTextField.Text, confirmPasswordTextField.Text);
+            UIAlertController alert = null;
+
+            if (result)
+            {
+                alert = UIAlertController.Create("Success", "User record successfully added", UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                alert = UIAlertController.Create("Failure", "Not registered - unsuccessful registration attempt", UIAlertControllerStyle.Alert);
+            }
+
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+            PresentViewController(alert, true, null);
+
+
             // throw new NotImplementedException();
+            /*
             if (!string.IsNullOrEmpty(passwordTextField.Text))
             {
                 if (passwordTextField.Text == confirmPasswordTextField.Text)
@@ -48,6 +67,7 @@ namespace DeliveriesApp.iOS
                     return;
                 }
             }
-        }        
+            */
+        }
     }
 }

@@ -12,6 +12,12 @@ namespace DeliveriesApp.Model
         public string Email { get; set; }
         public string Password { get; set; }
 
+        /// <summary>
+        /// Tries to login a user against User table in db
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static async Task<bool> Login(string email, string password)
         {
             bool result = false;
@@ -49,10 +55,41 @@ namespace DeliveriesApp.Model
                     // navigate away if needed
                 }
             }
-
-
             return result;
         }
 
+
+        /// <summary>
+        /// Tryies to register a user with db table of User
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="confirmPassword"></param>
+        /// <returns></returns>
+        public static async Task<bool> Register(string email, string password, string confirmPassword)
+        {
+            bool result = false;
+
+            if (!string.IsNullOrEmpty(password))
+            {
+                if (password == confirmPassword)
+                {
+                    var user = new User()
+                    {
+                        Email = email,
+                        Password = password,
+                    };
+
+                    await AzureHelper.MobileService.GetTable<User>().InsertAsync(user);        // insert record to Azure db table
+
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+
     }
+
 }
+
