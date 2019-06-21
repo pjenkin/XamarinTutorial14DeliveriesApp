@@ -22,11 +22,24 @@ namespace DeliveriesApp.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
-        /*
-        partial void RegisterButton_TouchUpInside(UIButton sender)
+
+        partial void RegisterSegueButton_TouchUpInside(UIButton sender)
         {
-            //throw new NotImplementedException();
+            // throw new NotImplementedException();
+
         }
-        */
+
+        // NB type 'override' + intellisense will help
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            // This code is specifically for the register segue
+            if (segue.Identifier == "registerSegue")       // segue Identifier set by storyboard & properties
+            {
+                var destinationViewController = segue.DestinationViewController as RegisterViewController;
+                destinationViewController.emailData = emailTextField.Text;
+            }
+        }
+
     }
 }

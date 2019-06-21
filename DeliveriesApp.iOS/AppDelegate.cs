@@ -22,7 +22,7 @@ namespace DeliveriesApp.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-
+            CurrentPlatform.Init();         // Needed for Azure db access 17-145 11:00
             return true;
         }
 

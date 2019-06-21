@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -41,17 +42,16 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9610" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="224" y="292" width="80" height="30"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <action selector="RegisterButton_TouchUpInside:" destination="9612" id="9611" eventType="touchUpInside"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10108" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="235" y="285" width="69" height="30"/>
+                                <state key="normal" title="Register"/>
                                 <constraints>
-                                    <constraint id="9651" firstAttribute="width" constant="80"/>
+                                    <constraint id="10114" firstAttribute="width" secondItem="10108" secondAttribute="height" multiplier="23:10"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="RegisterSegueButton_TouchUpInside:" destination="BYZ-38-t0r" id="10115" eventType="touchUpInside"/>
+                                    <segue id="10132" destination="8764" kind="show" identifier="registerSegue"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -65,15 +65,16 @@
                             <constraint id="9280" firstItem="221" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
                             <constraint id="9281" firstItem="221" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4"/>
                             <constraint id="9282" firstItem="220" firstAttribute="top" secondItem="221" secondAttribute="bottom" constant="24"/>
-                            <constraint id="9655" firstItem="9610" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
-                            <constraint id="9656" firstItem="9610" firstAttribute="top" secondItem="222" secondAttribute="centerY" constant="52"/>
+                            <constraint id="10111" firstItem="10108" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60"/>
+                            <constraint id="10112" firstItem="10108" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="10113" firstItem="10108" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="221" id="name-outlet-221"/>
                         <outlet property="passwordText" destination="220" id="name-outlet-220"/>
                         <outlet property="signinButton" destination="222" id="name-outlet-222"/>
-                        <outlet property="registerButton1" destination="9610" id="name-outlet-9610"/>
+                        <outlet property="registerSegueButton" destination="10108" id="name-outlet-10108"/>
                     </connections>
                     <navigationItem title="Log In" id="4962" key="navigationItem"/>
                 </viewController>
@@ -126,10 +127,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8781" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="16" y="293" width="288" height="30"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.15294117647058825" green="0.3843137254901961" blue="0.88627450980392153" alpha="1"/>
-                                <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10558" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="279" width="288" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.33333333333333331" green="0.61960784313725492" blue="0.90588235294117647" alpha="1"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
@@ -144,21 +144,18 @@
                             <constraint id="8778" firstItem="8777" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
                             <constraint id="8779" firstItem="8777" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
                             <constraint id="8780" firstItem="8773" firstAttribute="top" secondItem="8777" secondAttribute="bottom" constant="20"/>
-                            <constraint id="8782" firstItem="8781" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
                             <constraint id="9692" firstItem="8768" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
                             <constraint id="9693" firstItem="8768" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY"/>
-                            <constraint id="9730" firstItem="8781" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
-                            <constraint id="9731" firstItem="8781" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
-                            <constraint id="9732" firstItem="8781" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
-                            <constraint id="9733" firstItem="8781" firstAttribute="centerX" secondItem="8765" secondAttribute="centerX"/>
-                            <constraint id="9734" firstItem="8781" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY" constant="68"/>
+                            <constraint id="10948" firstItem="10558" firstAttribute="centerY" secondItem="8765" secondAttribute="centerY" constant="54"/>
+                            <constraint id="10950" firstItem="10558" firstAttribute="trailing" secondItem="8765" secondAttribute="trailingMargin"/>
+                            <constraint id="10951" firstItem="10558" firstAttribute="leading" secondItem="8765" secondAttribute="leadingMargin"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="8777" id="name-outlet-8777"/>
                         <outlet property="passwordTextField" destination="8773" id="name-outlet-8773"/>
                         <outlet property="confirmPasswordTextField" destination="8768" id="name-outlet-8768"/>
-                        <outlet property="registerButton" destination="8781" id="name-outlet-8781"/>
+                        <outlet property="registerButton" destination="10558" id="name-outlet-10558"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8766" userLabel="First Responder" sceneMemberID="firstResponder"/>

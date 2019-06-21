@@ -24,11 +24,15 @@ namespace DeliveriesApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton registerButton1 { get; set; }
+        UIKit.UIButton registerSegueButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton signinButton { get; set; }
+
+        [Action ("RegisterSegueButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void RegisterSegueButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -42,9 +46,9 @@ namespace DeliveriesApp.iOS
                 passwordText = null;
             }
 
-            if (registerButton1 != null) {
-                registerButton1.Dispose ();
-                registerButton1 = null;
+            if (registerSegueButton != null) {
+                registerSegueButton.Dispose ();
+                registerSegueButton = null;
             }
 
             if (signinButton != null) {
