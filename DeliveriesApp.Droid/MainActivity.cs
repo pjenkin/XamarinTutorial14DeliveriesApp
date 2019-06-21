@@ -8,6 +8,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using DeliveriesApp.Model;
 using Microsoft.WindowsAzure.MobileServices;
 using NUnit;            // NUnit added as a test for whether visible from Droid project
 
@@ -17,7 +18,6 @@ namespace DeliveriesApp.Droid
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        public static MobileServiceClient MobileService = new MobileServiceClient("https://pnj-deliveryapp.azurewebsites.net");  // static variable for Azure access - copy from Overview of (Web) App Service in Azure portal
         EditText emailEditText, passwordEditText;
         Button signInButton, registerButton;
 
@@ -57,6 +57,18 @@ namespace DeliveriesApp.Droid
             var email = emailEditText.Text;
             var password = passwordEditText.Text;
 
+            var result = await User.Login(email, password);
+
+            if (result)
+            {
+                Toast.MakeText(this, "Logged in - Welcome", ToastLength.Long).Show();
+            }
+            else
+            {
+                Toast.MakeText(this, "Unsuccessful Login - try again", ToastLength.Long).Show();
+            }
+
+            /*
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 Toast.MakeText(this, "Both email and password must be entered", ToastLength.Long).Show();
@@ -75,6 +87,7 @@ namespace DeliveriesApp.Droid
                     // navigate away if needed
                 }
             }
+            */
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

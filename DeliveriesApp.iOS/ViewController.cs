@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using UIKit;
+using DeliveriesApp.Model;
 
 namespace DeliveriesApp.iOS
 {
@@ -26,6 +27,23 @@ namespace DeliveriesApp.iOS
             var password = passwordText.Text;
             UIAlertController alert = null;     // no Toast in iOS!
 
+            var result = await User.Login(email, password);
+
+            if(result)
+            {
+                alert = UIAlertController.Create("Successful", "Welcome", UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                alert = UIAlertController.Create("Failure", "Email or password is incorrect", UIAlertControllerStyle.Alert);
+            }
+
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+            PresentViewController(alert, true, null);       // PresentViewController to make alert show up
+
+
+            /*
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 alert = UIAlertController.Create("Login incomplete", "Both email and password must be entered", UIAlertControllerStyle.Alert);
@@ -54,6 +72,8 @@ namespace DeliveriesApp.iOS
                     // navigate away if needed
                 }
             }
+
+             * */
         }
 
         public override void DidReceiveMemoryWarning ()
