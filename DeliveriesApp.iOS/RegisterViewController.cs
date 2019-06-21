@@ -48,38 +48,6 @@ namespace DeliveriesApp.iOS
                     return;
                 }
             }
-
-
-
-
-            /*
-            // this handler method boilerplate added automatically when TAB'ing after += to add event handler
-            private async void RegisterButton_TouchUpInside(object sender, EventArgs e)
-            {
-                // throw new NotImplementedException();
-
-                if (!string.IsNullOrEmpty(passwordTextField.Text))
-                {
-                    if (passwordTextField.Text == confirmPasswordTextField.Text)
-                    {
-                        var user = new User()
-                        {
-                            Email = emailTextField.Text,
-                            Password = passwordTextField.Text,
-                        };
-
-                        await AppDelegate.MobileService.GetTable<User>().InsertAsync(user);        // insert record to Azure db table
-
-                        var alert = UIAlertController.Create("Success", "User record successfully added", UIAlertControllerStyle.Alert);
-
-                        alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-
-                        PresentViewController(alert, true, null);
-
-                        return;
-                    }
-                }
-    */
         }        
     }
 }
