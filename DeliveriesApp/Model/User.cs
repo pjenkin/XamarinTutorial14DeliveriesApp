@@ -80,7 +80,13 @@ namespace DeliveriesApp.Model
                         Password = password,
                     };
 
-                    await AzureHelper.MobileService.GetTable<User>().InsertAsync(user);        // insert record to Azure db table
+                    //await AzureHelper.MobileService.GetTable<User>().InsertAsync(user);        // insert record to Azure db table
+
+                    // Use AzureHelper's bespoke generic method instead to write (in this case a record to User table) 18-152
+                    //AzureHelper.Insert<User>(ref user);     // actually type (User) inferred from object instance (user)
+                    //AzureHelper.Insert(ref user); // ref not used
+                    AzureHelper.Insert(user);           // type still inferred
+
 
                     result = true;
                 }
