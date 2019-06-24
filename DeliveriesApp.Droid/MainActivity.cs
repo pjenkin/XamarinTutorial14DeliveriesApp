@@ -62,6 +62,8 @@ namespace DeliveriesApp.Droid
             if (result)
             {
                 Toast.MakeText(this, "Logged in - Welcome", ToastLength.Long).Show();
+                Intent intent = new Intent(this, typeof(TabsActivity));
+                StartActivity(intent);                      // go to new 'main' page (with tabs)
             }
             else
             {
