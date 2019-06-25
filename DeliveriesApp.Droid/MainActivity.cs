@@ -64,6 +64,8 @@ namespace DeliveriesApp.Droid
                 Toast.MakeText(this, "Logged in - Welcome", ToastLength.Long).Show();
                 Intent intent = new Intent(this, typeof(TabsActivity));
                 StartActivity(intent);                      // go to new 'main' page (with tabs)
+                Finish();                                   
+                // Finish this activity, so as to be no longer available on the stack, and thus un-navigable-to
             }
             else
             {
