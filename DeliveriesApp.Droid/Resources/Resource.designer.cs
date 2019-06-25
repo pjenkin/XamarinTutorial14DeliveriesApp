@@ -3359,14 +3359,14 @@ namespace DeliveriesApp.Droid
 			// aapt resource value: 0x7f0a0180
 			public const int AppTheme = 2131362176;
 			
-			// aapt resource value: 0x7f0a0182
-			public const int AppTheme_AppBarOverlay = 2131362178;
-			
-			// aapt resource value: 0x7f0a0181
-			public const int AppTheme_NoActionBar = 2131362177;
-			
 			// aapt resource value: 0x7f0a0183
-			public const int AppTheme_PopupOverlay = 2131362179;
+			public const int AppTheme_AppBarOverlay = 2131362179;
+			
+			// aapt resource value: 0x7f0a0182
+			public const int AppTheme_NoActionBar = 2131362178;
+			
+			// aapt resource value: 0x7f0a0184
+			public const int AppTheme_PopupOverlay = 2131362180;
 			
 			// aapt resource value: 0x7f0a009a
 			public const int Base_AlertDialog_AppCompat = 2131361946;
@@ -4225,6 +4225,9 @@ namespace DeliveriesApp.Droid
 			
 			// aapt resource value: 0x7f0a016e
 			public const int Theme_Design_NoActionBar = 2131362158;
+			
+			// aapt resource value: 0x7f0a0181
+			public const int Theme_PNJNoBarOrTitle = 2131362177;
 			
 			// aapt resource value: 0x7f0a0107
 			public const int ThemeOverlay_AppCompat = 2131362055;
