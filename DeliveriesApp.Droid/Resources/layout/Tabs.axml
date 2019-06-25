@@ -16,4 +16,12 @@
 				android:text="Profile"/>
 	</android.support.design.widget.TabLayout>
 
+<!-- NB position (ie 1st tabItem, 2nd TabItem, ...), instead of id, needed for determining which tab was selected. Thus in 19-155 no ids defined for Tab Items. -->
+
+	<FrameLayout
+		android:id="@+id/contentFrame"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+	> <!-- FrameLayout as container: height determined by how many entries in Deliveries/Delivered/Profile -->
+	</FrameLayout>
 </LinearLayout>
