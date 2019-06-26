@@ -32,15 +32,42 @@ namespace DeliveriesApp.Model
         {
             List<Delivery> deliveries = new List<Delivery>();
 
-            deliveries = await AzureHelper.MobileService.GetTable<Delivery>().ToListAsync();
+            //deliveries = await AzureHelper.MobileService.GetTable<Delivery>().ToListAsync();
+
+            // Get only certain deliveries - where Status is not 2 (delivered already)
+
+            deliveries = await AzureHelper.MobileService.GetTable<Delivery>().Where(d => d.Status != 2).ToListAsync();
 
             return deliveries;
         }
+
+        public static async Task<List<Delivery>> GetDelivered()
+        {
+            List<Delivery> deliveries = new List<Delivery>();
+
+            //deliveries = await AzureHelper.MobileService.GetTable<Delivery>().ToListAsync();
+
+            // Get only certain deliveries - where Status is 2 (delivered already)
+
+            deliveries = await AzureHelper.MobileService.GetTable<Delivery>().Where(d => d.Status == 2).ToListAsync();
+
+            return deliveries;
+        }
+
 
         public static async Task<bool> InsertDelivery(Delivery delivery)
         {
             return await AzureHelper.Insert<Delivery>(delivery);       // use bespoke generic method from helper to insert a new delivery record
         }
 
+        /// <summary>
+        /// overrride for ToString so as to display delivery data text nicely e.g. for in a list
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            // return base.ToString();
+            return $"{Name} - {Status}";        
+        }
     }
 }
