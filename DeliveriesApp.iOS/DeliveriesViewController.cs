@@ -19,11 +19,8 @@ namespace DeliveriesApp.iOS
         public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            var deliveriesData = await Delivery.GetDeliveries();
-
-            deliveries = deliveriesData;
-            ////deliveries = await Delivery.GetDeliveries();
+ 
+            deliveries = await Delivery.GetDeliveries();
             TableView.ReloadData();      // after new data, refresh table (this method available because subclassing UI*Table*viewController)
         }
 
@@ -33,12 +30,11 @@ namespace DeliveriesApp.iOS
         {
             //return base.RowsInSection(tableView, section);       // boilerplate
 
-            // return 0 if deliveries is null
-            return deliveries?.Count ?? 0;
-            /*
-            return deliveries.Count;
-            //return deliveries.Count;            // as many rows as there are delivery records
-            */
+            // Xamarin weirdness - code bouncing around this line & nulls for deliveries variable from Delivery.GetDeliveries
+            return deliveries?.Count ?? 0;      // as many rows as there are delivery records; Return 0 if 'deliveries' is null
+            
+            //return deliveries.Count;            // line in video 22-167 - as many rows as there are delivery records
+
             // NB Only 1 section in this app’s case. Otherwise evaulate which section then calculate #rows.
         }
 
@@ -68,7 +64,7 @@ namespace DeliveriesApp.iOS
                     break;
             }
 
-            // DetailTextLabel available because TableView cell style is 'Subtitle'
+            // DetailTextLabel is available because TableView cell style is 'Subtitle'
 
             return cell;
             
