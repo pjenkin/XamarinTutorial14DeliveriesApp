@@ -35,7 +35,7 @@ namespace DeliveriesApp.iOS
             
             //return deliveries.Count;            // line in video 22-167 - as many rows as there are delivery records
 
-            // NB Only 1 section in this app’s case. Otherwise evaulate which section then calculate #rows.
+            // NB Only 1 section in this app’s case. Otherwise evaluate which section then calculate #rows.
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
