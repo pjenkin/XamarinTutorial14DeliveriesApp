@@ -11,5 +11,15 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:id="@+id/textView1" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/packageNameEditText"
+		android:hint="Name of package" />
+	<Button
+		android:text="Save"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/saveNewDeliveryButton" />
 
 </LinearLayout>
