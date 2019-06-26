@@ -18,7 +18,8 @@ namespace DeliveriesApp.Droid
     //public class TabsActivity : Activity
     public class TabsActivity : FragmentActivity            // must be a FragmentActivity for navigation - SupportFragmentManager
     {
-        TabLayout tabLayout;      // refer to our new 'main' layout
+        TabLayout tabLayout;                                // refer to our new 'main' layout
+        Android.Support.V7.Widget.Toolbar tabsToolbar;      // otherwise from Android.Widget.Toolbar by default - would be different types
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,10 +29,26 @@ namespace DeliveriesApp.Droid
             // ok! :-) This activity will be to do with our Tabs layout (ie the new main page)
             SetContentView(Resource.Layout.Tabs);
 
+            tabsToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.tabsToolbar);       // use the id defined in the element in Tabs.axml
+
             tabLayout = this.FindViewById<TabLayout>(Resource.Id.mainTabLayout);  // get our tab by id defined as android:id="@+id/mainTabLayout"
             tabLayout.TabSelected += TabLayout_TabSelected;                         // += then TAB for auto-complete of event handler
 
+            tabsToolbar.InflateMenu(Resource.Menu.tabsMenu);                        // use resource defined
+            tabsToolbar.MenuItemClick += TabsToolbar_MenuItemClick;     // += and TAB to subscribe with handler method
+
             FragmentNavigate(new DeliveriesFragment());     // in effect, make Deliveries the default fragment on startup
+
+        }
+
+        private void TabsToolbar_MenuItemClick(object sender, Android.Support.V7.Widget.Toolbar.MenuItemClickEventArgs e)
+        {
+            // throw new NotImplementedException();
+            // Good practice to always check which menu item was selected (even if only 1 item) - use id from resource xml file
+            if (e.Item.ItemId == Resource.Id.action_add)
+            {
+                StartActivity(typeof(NewDeliveryActivity));        // use (2nd) overload requiring type not Intent
+            }
         }
 
         private void TabLayout_TabSelected(object sender, TabLayout.TabSelectedEventArgs e)

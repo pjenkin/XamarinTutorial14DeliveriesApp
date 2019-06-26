@@ -11,11 +11,12 @@
         <item name="windowNoTitle">true</item>
     </style>
   
+  
   <style name="Theme.PNJNoBarOrTitle" parent="@style/Theme.AppCompat.Light.Dialog">
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>
-
+<!-- Don't use this as will make app visible only as small window shrunk onto fragment 19-157 -->
 
   <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

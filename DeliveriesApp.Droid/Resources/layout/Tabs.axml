@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+	<android.support.v7.widget.Toolbar 
+		android:id="@+id/tabsToolbar"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+	/>
 
 	<android.support.design.widget.TabLayout
 		android:id="@+id/mainTabLayout"
@@ -22,6 +28,6 @@
 		android:id="@+id/contentFrame"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-	> <!-- FrameLayout as container: height determined by how many entries in Deliveries/Delivered/Profile -->
-	</FrameLayout>
+	/> <!-- FrameLayout as container: height determined by how many entries in Deliveries/Delivered/Profile -->
+	
 </LinearLayout>
