@@ -14,7 +14,8 @@ using Android.Widget;
 namespace DeliveriesApp.Droid
 {
     //public class DeliveredFragment : Fragment
-    public class DeliveredFragment : Android.Support.V4.App.Fragment       // derive from support v4 for backward-compatibility
+    // public class DeliveredFragment : Android.Support.V4.App.Fragment       // derive from support v4 for backward-compatibility
+    public class DeliveredFragment : Android.Support.V4.App.ListFragment       // derive from support v4 for backward-compatibility
     {
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,12 +24,16 @@ namespace DeliveriesApp.Droid
             // Create your fragment here
         }
 
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            return inflater.Inflate(Resource.Layout.Delivered, container, false);
+        // Because this class is derived from ListFragment, it will contain a ListView, so there's no need to inflate a Fragment
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
-        }
+        /*
+                public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+                {
+                    // Use this to return your custom view for this Fragment
+                    return inflater.Inflate(Resource.Layout.Delivered, container, false);
+
+                    return base.OnCreateView(inflater, container, savedInstanceState);
+                }
+        */
     }
 }
