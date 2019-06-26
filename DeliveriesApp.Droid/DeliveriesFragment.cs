@@ -27,7 +27,8 @@ namespace DeliveriesApp.Droid
             var deliveries = await Delivery.GetDeliveries();        // get list of delivered packages
 
             // ListAdapter a member of (Fragment's inherited-from base class) ListFragment, for correct type of list resource to display
-            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
+            //ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
+            ListAdapter = new DeliveryAdapter(Activity, deliveries);            // use the custom Adapter
         }
 
         // Because this class is derived from ListFragment, it will contain a ListView, so there's no need to inflate a Fragment
