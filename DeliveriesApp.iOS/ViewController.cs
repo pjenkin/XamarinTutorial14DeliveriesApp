@@ -8,6 +8,9 @@ namespace DeliveriesApp.iOS
 {
     public partial class ViewController : UIViewController
     {
+
+        bool hasLoggedIn = false;       // private, hence camel case
+
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -31,12 +34,15 @@ namespace DeliveriesApp.iOS
 
             if(result)
             {
+                hasLoggedIn = true;
                 alert = UIAlertController.Create("Successful", "Welcome", UIAlertControllerStyle.Alert);
+                PerformSegue("loginSegue", this);     // workaround login segue logic execution (alongside ShouldPerformSegue)
             }
             else
             {
                 alert = UIAlertController.Create("Failure", "Email or password is incorrect", UIAlertControllerStyle.Alert);
             }
+
 
             alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
@@ -101,5 +107,19 @@ namespace DeliveriesApp.iOS
             }
         }
 
+
+        public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+        {
+            //return base.ShouldPerformSegue(segueIdentifier, sender);
+
+            if (segueIdentifier == "loginSegue")
+            {
+                return hasLoggedIn;
+            }
+
+            return true;        // any other segue than a loginSegue, go right ahead and segue (20-159)
+
+            // Hard-coded segue identifier string - could fetch or parameterise this?
+        }
     }
 }
