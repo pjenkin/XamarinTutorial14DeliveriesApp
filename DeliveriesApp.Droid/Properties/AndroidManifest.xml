@@ -35,8 +35,8 @@
   <uses-permission android:name="PACKAGE_NAME.permission.MAPS_RECEIVE" />
   <permission android:name="PACKAGE_NAME.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
   -->
-  <uses-permission android:name="DeliveriesApp.permission.MAPS_RECEIVE" />
-  <permission android:name="DeliveriesApp.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+  <uses-permission android:name="deliveriesapp.permission.MAPS_RECEIVE" />
+  <permission android:name="deliveriesapp.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
 
 
   <application android:allowBackup="true" 

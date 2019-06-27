@@ -62,7 +62,7 @@ namespace DeliveriesApp.Droid
 
             if (locationManager.IsProviderEnabled(provider))    // check whether GPS provider actually available (e.g. device may not even have GPS)
             {
-                locationManager.RequestLocationUpdates(provider, 5000, 1000, this);        // keep getting, not just a single fix, at 5s intervals, if 1km or more moved - d'need ILocationListener interface
+                locationManager.RequestLocationUpdates(provider, 5000, 1, this);        // keep getting, not just a single fix, at 5s intervals, if 1km or more moved - d'need ILocationListener interface
             }
         }
 
