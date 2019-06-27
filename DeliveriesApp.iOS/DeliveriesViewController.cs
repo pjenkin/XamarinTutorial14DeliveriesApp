@@ -41,35 +41,49 @@ namespace DeliveriesApp.iOS
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
 
-            var cell = tableView.DequeueReusableCell("deliveryCell");     // recycle this 1 or more cells when fallen out of sight - Identifier value of cell in TableViewController
+            //var cell = tableView.DequeueReusableCell("deliveryCell");     // recycle this 1 or more cells when fallen out of sight - Identifier value of cell in TableViewController
+            var cell = tableView.DequeueReusableCell("deliveryCell") as DeliveryTableViewCell;     // recycle this 1 or more cells when fallen out of sight - Identifier value of cell in TableViewController - cast as custom cell type
 
             var deliveryValue = deliveries[indexPath.Row];                   // get this row's data for the cell
 
-            cell.TextLabel.Text = deliveryValue.Name;
+            //cell.TextLabel.Text = deliveryValue.Name;
+            cell.nameLabel.Text = deliveryValue.Name;
+            cell.coordinatesLabel.Text = $"{deliveryValue.DestinationLatitude}, {deliveryValue.DestinationLongitude}";
 
             // cf DeliveriesAdaptor in Android
             switch (deliveryValue.Status)
             {
                 case 0:
-                    cell.DetailTextLabel.Text = "Awaiting delivery person";
+                    //cell.DetailTextLabel.Text = "Awaiting delivery person";
+                    cell.statusLabel.Text = "Awaiting delivery person";
                     break;
                 case 1:
-                    cell.DetailTextLabel.Text = "Out for delivery";
+                    //cell.DetailTextLabel.Text = "Out for delivery";
+                    cell.statusLabel.Text = "Out for delivery";
                     break;
                 case 2:
-                    cell.DetailTextLabel.Text = "Already delivered";
+                    //cell.DetailTextLabel.Text = "Already delivered";
+                    cell.statusLabel.Text = "Already delivered";
                     break;
                 default:
-                    cell.DetailTextLabel.Text = "Delivery status unknown";
+                    //cell.DetailTextLabel.Text = "Delivery status unknown";
+                    cell.statusLabel.Text = "Delivery status unknown";
                     break;
             }
 
-            // DetailTextLabel is available because TableView cell style is 'Subtitle'
+            // DetailTextLabel was available because TableView cell style is 'Subtitle'
 
             return cell;
             
             //return base.GetCell(tableView, indexPath);
 
+        }
+
+        // Make the cell height enough to hold labels comfortably
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            // return base.GetHeightForRow(tableView, indexPath);
+            return 60;      // 60 pixels apparently sufficient in this case
         }
     }
 }
