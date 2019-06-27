@@ -48,7 +48,7 @@
                >
 		<!-- was Theme.AppCompat.Light.DarkActionBar -->
 		<!-- could be android:label="Deliveries" , was android:theme="@style/AppTheme" -->
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
-
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAUpxpJCVYZUU7T7arHxjsrJ2gragtJAj0" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 </manifest>

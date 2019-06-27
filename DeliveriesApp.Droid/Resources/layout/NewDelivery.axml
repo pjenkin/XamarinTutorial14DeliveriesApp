@@ -21,5 +21,15 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/saveNewDeliveryButton" />
-
+	<TextView
+		android:text="Please locate package origin"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2" />
+	<fragment
+		class="com.google.android.gms.maps.MapFragment" 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/mapFragment" />
 </LinearLayout>
