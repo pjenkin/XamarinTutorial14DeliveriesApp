@@ -30,6 +30,17 @@
 	<fragment
 		class="com.google.android.gms.maps.MapFragment" 
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:id="@+id/mapFragment" />
+		android:layout_height="200dp"
+		android:id="@+id/originMapFragment" />
+	<TextView
+		android:text="Please locate package destination"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2" />
+	<fragment
+		class="com.google.android.gms.maps.MapFragment" 
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:id="@+id/destinationMapFragment" />
 </LinearLayout>

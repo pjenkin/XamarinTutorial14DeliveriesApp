@@ -20,13 +20,16 @@ namespace DeliveriesApp.Droid
     [Activity(Label = "NewDeliveryActivity")]
     //public class NewDeliveryActivity : Activity
     public class NewDeliveryActivity : AppCompatActivity, IOnMapReadyCallback, ILocationListener       // IOnMapReadyCallback needed for .GetMapAsync, ILocationListener for .RequestLocationUpdates
+    //public class NewDeliveryActivity : AppCompatActivity, ILocationListener       // IOnMapReadyCallback needed for .GetMapAsync, ILocationListener for .RequestLocationUpdates
+
     {
 
         Button saveNewDeliveryButton;
         EditText packageNameEditText;
-        MapFragment mapFragment;
+        MapFragment originMapFragment, destinationMapFragment;
         double latitude, longitude;
-        LocationManager locationManager;    // must be initialised from service
+        LocationManager locationManager;        // must be initialised from service
+        GoogleMap originMap, destinationMap;    // since Map member is absent from MapFragment in 2019
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,9 +41,10 @@ namespace DeliveriesApp.Droid
 
             saveNewDeliveryButton = FindViewById<Button>(Resource.Id.saveNewDeliveryButton);
             packageNameEditText = FindViewById<EditText>(Resource.Id.packageNameEditText);
-            mapFragment = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.mapFragment);   // Activity.FragmentManager; fragment ID set in axml element
-            // mapFragment.GetMapAsync(this);  // in OnLocationChanged now - activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
-
+            originMapFragment = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.originMapFragment);   // Activity.FragmentManager; fragment ID set in axml element
+            //originMapFragment.GetMapAsync(this);  // in OnLocationChanged now - activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
+            destinationMapFragment = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.destinationMapFragment);
+            //destinationMapFragment.GetMapAsync(this);
             saveNewDeliveryButton.Click += SaveNewDeliveryButton_Click;
 
         }
@@ -64,16 +68,42 @@ namespace DeliveriesApp.Droid
             {
                 locationManager.RequestLocationUpdates(provider, 5000, 1, this);        // keep getting, not just a single fix, at 5s intervals, if 1km or more moved - d'need ILocationListener interface
             }
+
+            // Get initial location & display this in the map(s)
+            var location = locationManager.GetLastKnownLocation(LocationManager.NetworkProvider);
+            // Get the last saved location - from cell towers (less accurate but more likely to have existed & been saved)
+            latitude = location.Latitude;
+            longitude = location.Longitude;
+
+            // could refactor this GetMapAsync stuff as used at least twice in class
+            //            MyMap originMap = new MyMap();
+            //            MyMap destinationMap = new MyMap();
+            MyMap originMap = new MyMap();
+            MyMap destinationMap = new MyMap();
+
+            originMapFragment.GetMapAsync(this);
+            destinationMapFragment.GetMapAsync(this);
+//            originMapFragment.GetMapAsync(originMap);   // the argument is the obect in which callback OnMapReady is to be triggered
+//            destinationMapFragment.GetMapAsync(destinationMap);
         }
 
         private async void SaveNewDeliveryButton_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
 
+            // Get coordinates of centre of map (using the MyMap bespoke class)
+            var originLocation = originMap.CameraPosition.Target;
+            var destinationLocation = originMap.CameraPosition.Target;
+            
+
             Delivery delivery = new Delivery()
             {
                 Name = packageNameEditText.Text,
-                Status = 0
+                Status = 0,
+                OriginLatitude = originLocation.Latitude,
+                OriginLongitude = originLocation.Longitude,
+                DestinationLatitude = destinationLocation.Latitude,
+                DestinationLongitude = destinationLocation.Longitude
             };
 
             await Delivery.InsertDelivery(delivery);
@@ -83,10 +113,32 @@ namespace DeliveriesApp.Droid
         // Set a marker using the device GPS, to show the user's location (for parcel address)
         public void OnMapReady(GoogleMap googleMap)
         {
+
+            if (this.originMap == null)
+            {
+                this.originMap = googleMap;
+            }
+            else
+            {
+                this.destinationMap = googleMap;
+            }
+
+//            MyMap originMap = new MyMap();
+//            MyMap destinationMap = new MyMap();
+
+            //originMapFragment.GetMapAsync(this);
+            //destinationMapFragment.GetMapAsync(this);
+//            originMapFragment.GetMapAsync(originMap);   // the argument is the obect in which callback OnMapReady is to be triggered
+//            destinationMapFragment.GetMapAsync(destinationMap);
+
+
+
             MarkerOptions marker = new MarkerOptions();
             marker.SetPosition(new LatLng(latitude, longitude));
             marker.SetTitle("Your own location");
             googleMap.AddMarker(marker);
+
+            googleMap.MoveCamera(CameraUpdateFactory.NewLatLngZoom(new LatLng(latitude, longitude), 10));      // use Factory instead of instanting with a constructor
         }
 
         public void OnLocationChanged(Location location)
@@ -96,7 +148,12 @@ namespace DeliveriesApp.Droid
             latitude = location.Latitude;
             longitude = location.Longitude;
 
-            mapFragment.GetMapAsync(this);  // activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
+            MyMap originMap = new MyMap();
+            MyMap destinationMap = new MyMap();
+            originMapFragment.GetMapAsync(this);  // activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
+            destinationMapFragment.GetMapAsync(this);
+//            originMapFragment.GetMapAsync(originMap);  // activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
+//            destinationMapFragment.GetMapAsync(destinationMap);
         }
 
         public void OnProviderDisabled(string provider)
