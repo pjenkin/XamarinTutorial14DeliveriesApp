@@ -16,17 +16,14 @@ namespace DeliveriesApp.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        // UIKit.UILabel coordinatesLabel { get; set; }
         public UIKit.UILabel coordinatesLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        // UIKit.UILabel nameLabel { get; set; }
         public UIKit.UILabel nameLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        // UIKit.UILabel statusLabel { get; set; }
         public UIKit.UILabel statusLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
