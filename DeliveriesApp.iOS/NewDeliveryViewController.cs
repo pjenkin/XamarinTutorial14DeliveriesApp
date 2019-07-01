@@ -30,7 +30,7 @@ namespace DeliveriesApp.iOS
             originMapView.DidUpdateUserLocation += OriginMapView_DidUpdateUserLocation;     // += and TAB for boilerplate event handling code
             destinationMapView.DidUpdateUserLocation += DestinationMapView_DidUpdateUserLocation;
 
-            originMapView.DidFailToLocateUser += OriginMapView_DidFailToLocateUser;
+            originMapView.DidFailToLocateUser += OriginMapView_DidFailToLocateUser;         // += TAB added by PNJ for diagnostics
 
 
             saveBarButton.Clicked += SaveBarButton_Clicked;     // use += and TAB to boilerplate subscription to event handler
@@ -47,14 +47,14 @@ namespace DeliveriesApp.iOS
             // throw new NotImplementedException();
 
             // Check whether location set to something
-            if (originMapView.UserLocation != null)
+            if (destinationMapView.UserLocation != null)
             {
-                var coordinates = originMapView.UserLocation.Coordinate;        // get center
+                var coordinates = destinationMapView.UserLocation.Coordinate;        // get center
                 var span = new MapKit.MKCoordinateSpan(0.15,0.15);              // how many degrees of lat/lng to show inside the span
-                originMapView.Region = new MapKit.MKCoordinateRegion(coordinates, span);
+                destinationMapView.Region = new MapKit.MKCoordinateRegion(coordinates, span);
 
-                originMapView.RemoveAnnotations();      // clear all annotations from previous operations from location/map updates
-                originMapView.AddAnnotation(new MKPointAnnotation()
+                destinationMapView.RemoveAnnotations();      // clear all annotations from previous operations from location/map updates
+                destinationMapView.AddAnnotation(new MKPointAnnotation()
                 {
                     Coordinate = coordinates,
                     Title = "Your location"
@@ -67,14 +67,14 @@ namespace DeliveriesApp.iOS
             // throw new NotImplementedException();
 
             // Check whether location set to something
-            if (destinationMapView.UserLocation != null)
+            if (originMapView.UserLocation != null)
             {
-                var coordinates = destinationMapView.UserLocation.Coordinate;        // get center
+                var coordinates = originMapView.UserLocation.Coordinate;        // get center
                 var span = new MapKit.MKCoordinateSpan(0.15, 0.15);              // how many degrees of lat/lng to show inside the span
-                destinationMapView.Region = new MapKit.MKCoordinateRegion(coordinates, span);
+                originMapView.Region = new MapKit.MKCoordinateRegion(coordinates, span);
 
-                destinationMapView.RemoveAnnotations();      // clear all annotations from previous operations from location/map updates
-                destinationMapView.AddAnnotation(new MKPointAnnotation()
+                originMapView.RemoveAnnotations();      // clear all annotations from previous operations from location/map updates
+                originMapView.AddAnnotation(new MKPointAnnotation()
                 {
                     Coordinate = coordinates,
                     Title = "My own location"
@@ -86,10 +86,17 @@ namespace DeliveriesApp.iOS
         {
             // throw new NotImplementedException();
 
+            var origin = originMapView.CenterCoordinate;
+            var destination = destinationMapView.CenterCoordinate;
+
             Delivery delivery = new Delivery()
             {
                 Name = newPackageNameTextField.Text,
-                Status = 0
+                Status = 0,
+                OriginLatitude = origin.Latitude,
+                OriginLongitude = origin.Longitude,
+                DestinationLatitude = destination.Latitude,
+                DestinationLongitude = destination.Longitude,
             };
 
             await Delivery.InsertDelivery(delivery);        // calling the Delivery object which d'call our Azure helper's generic Insert method
