@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical"
+	android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
+	<EditText
+		android:inputType="textEmailAddress"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/emailEditText"
+		android:hint="Email address please" />
+	<EditText
+		android:inputType="textPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/passwordEditText"
+		android:hint="Password please" />
+	<Button
+		android:text="Sign In"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/signInButton" />
+	<Button
+		android:text="Register"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/registerSegueButton" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!" />
-
-</RelativeLayout>
+</LinearLayout>
