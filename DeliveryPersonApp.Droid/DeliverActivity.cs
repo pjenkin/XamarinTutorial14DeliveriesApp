@@ -10,17 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "PickupActivity")]
-    public class PickupActivity : Activity
+    [Activity(Label = "DeliverActivity")]
+    public class DeliverActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.Pickup);     // add our own pickup layout as the view to use
+            SetContentView(Resource.Layout.Deliver);       // show our own Deliver layout
         }
     }
 }

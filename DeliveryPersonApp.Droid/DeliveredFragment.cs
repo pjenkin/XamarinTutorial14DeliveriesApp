@@ -11,7 +11,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
     public class DeliveredFragment : Fragment
     {

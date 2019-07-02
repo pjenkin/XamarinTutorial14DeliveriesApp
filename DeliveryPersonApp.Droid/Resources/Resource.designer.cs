@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("DeliveryPersonApp.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("DeliveryPersonApp.Droid.Resource", IsApplication=true)]
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
 	
 	

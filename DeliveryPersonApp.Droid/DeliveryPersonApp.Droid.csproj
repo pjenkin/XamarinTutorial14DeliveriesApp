@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B9AA20B1-8F27-4858-9C04-677B41183F59}</ProjectGuid>
+    <ProjectGuid>{BDE2DCE6-8D2C-49D3-9C19-F8368D961D08}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{84dd83c5-0fe3-4294-9419-09e7c8ba324f}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DeliveryPersonApp.Android</RootNamespace>
-    <AssemblyName>DeliveryPersonApp.Android</AssemblyName>
+    <RootNamespace>DeliveryPersonApp.Droid</RootNamespace>
+    <AssemblyName>DeliveryPersonApp.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -117,12 +117,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Pickup.axml">
+    <AndroidResource Include="Resources\layout\Deliver.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Deliver.axml">
+    <AndroidResource Include="Resources\layout\Pickup.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

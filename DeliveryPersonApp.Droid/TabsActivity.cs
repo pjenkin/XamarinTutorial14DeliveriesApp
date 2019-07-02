@@ -10,18 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "RegisterActivity")]
-    public class RegisterActivity : Activity
+    [Activity(Label = "TabsActivity")]
+    public class TabsActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-
-            SetContentView(Resource.Layout.Register);       // use newly defined layout resource for registering user
+            SetContentView(Resource.Layout.Tabs);       // use our own layout - to contain tabs for displaying Delivered, Delivering & Waiting fragments
         }
     }
 }

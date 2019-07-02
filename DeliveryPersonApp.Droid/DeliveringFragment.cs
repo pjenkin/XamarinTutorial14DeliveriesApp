@@ -11,9 +11,9 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
-    public class WaitingFragment : Fragment
+    public class DeliveringFragment : Fragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {

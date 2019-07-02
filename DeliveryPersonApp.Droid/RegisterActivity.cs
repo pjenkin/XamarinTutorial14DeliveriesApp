@@ -10,17 +10,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "DeliverActivity")]
-    public class DeliverActivity : Activity
+    [Activity(Label = "RegisterActivity")]
+    public class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.Deliver);
         }
     }
 }

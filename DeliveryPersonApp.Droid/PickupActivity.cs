@@ -10,19 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace DeliveryPersonApp.Android
+namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "TabsActivity")]
-    public class TabsActivity : Activity
+    [Activity(Label = "PickupActivity")]
+    public class PickupActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-
-            // This activity is for displaying the delivered, delivering & waiting tabs/fragments
-            SetContentView(Resource.Layout.Tabs);
+            SetContentView(Resource.Layout.Pickup);     // use the bespoke Pickup layout to show details of pickup arrangements
         }
     }
 }
