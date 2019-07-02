@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,8 +11,8 @@ using UIKit;
 
 namespace DeliveryPersonApp.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("RegisterViewController")]
+    partial class RegisterViewController
     {
         void ReleaseDesignerOutlets ()
         {
