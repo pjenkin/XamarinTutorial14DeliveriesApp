@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveriesApp", "DeliveriesApp\DeliveriesApp.csproj", "{EA1A83A6-8046-4DBA-9B94-3CD01CC89F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliveriesApp", "DeliveriesApp\DeliveriesApp.csproj", "{EA1A83A6-8046-4DBA-9B94-3CD01CC89F30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveriesApp.iOS", "DeliveriesApp.iOS\DeliveriesApp.iOS.csproj", "{101E3060-8799-4119-8A7A-4F86A01C0C84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveriesApp.Droid", "DeliveriesApp.Droid\DeliveriesApp.Droid.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryPersonApp.Android", "DeliveryPersonApp.Android\DeliveryPersonApp.Android.csproj", "{B9AA20B1-8F27-4858-9C04-677B41183F59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryPersonApp.iOS", "DeliveryPersonApp.iOS\DeliveryPersonApp.iOS.csproj", "{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,34 @@ Global
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhone.Build.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B9AA20B1-8F27-4858-9C04-677B41183F59}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Debug|iPhone.Build.0 = Debug|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Release|iPhone.Build.0 = Release|iPhone
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{1F2EBADD-C656-4D93-AFFB-476AC69F5AC5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
