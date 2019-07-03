@@ -83,7 +83,7 @@ namespace DeliveriesApp.Droid
 
             originMapFragment.GetMapAsync(this);
             destinationMapFragment.GetMapAsync(this);
-//            originMapFragment.GetMapAsync(originMap);   // the argument is the obect in which callback OnMapReady is to be triggered
+//            originMapFragment.GetMapAsync(originMap);   // the argument is the object in which callback OnMapReady is to be triggered
 //            destinationMapFragment.GetMapAsync(destinationMap);
         }
 
