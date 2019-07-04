@@ -19,13 +19,17 @@ namespace DeliveryPersonApp.Droid
     {
         List<Delivery> deliveries;
 
-        public override void OnCreate(Bundle savedInstanceState)
+        public async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
 
             deliveries = new List<Delivery>();
+
+            var userId = (Activity as TabsActivity).deliveryPersonId; // use Fragment's inherited Activity to get (userId) member containing data passed to parent TabsActivity
+            deliveries = await Delivery.GetBeingDelivered(userId);
+            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -45,8 +49,8 @@ namespace DeliveryPersonApp.Droid
 
             Intent intent = new Intent(Activity, typeof(DeliverActivity));          // make an intent to move to a DeliverActivity page, for to show the delivery (as in ListFragment not Activity, for context use Activity property of ListFragment (this))
             intent.PutExtra("latitude", selectedDelivery.DestinationLatitude);
-            intent.PutExtra("longitude", selectedDelivery.DestinationLongitude);    // pass over lat/lng to next activity
-
+            intent.PutExtra("longitude", selectedDelivery.DestinationLongitude);    // pass over the selected delivery's lat/lng to next activity
+            intent.PutExtra("deliveryId",selectedDelivery.Id);                      // also pass to next activity (Deliver Activity) the selected delivery's ID
             StartActivity(intent);                                                  // go to next activity
         }
     }

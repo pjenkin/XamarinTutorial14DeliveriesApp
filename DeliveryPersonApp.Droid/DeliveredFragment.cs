@@ -10,17 +10,27 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using DeliveriesApp.Model;
 
 namespace DeliveryPersonApp.Droid
 {
     // public class DeliveredFragment : Fragment
     public class DeliveredFragment : Android.Support.V4.App.ListFragment
     {
-        public override void OnCreate(Bundle savedInstanceState)
+        List<Delivery> deliveries;
+
+        public async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
+
+            deliveries = new List<Delivery>();
+
+            var deliveryPersonId = (Activity as TabsActivity).deliveryPersonId; // use Fragment's inherited Activity to get (userId) member containing data passed to parent TabsActivity
+            deliveries = await Delivery.GetDelivered(deliveryPersonId);
+            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
+
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

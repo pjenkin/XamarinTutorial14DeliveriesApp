@@ -1,11 +1,13 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using DeliveriesApp.Model;
 
 namespace DeliveryPersonApp.Droid
 {
@@ -29,7 +31,7 @@ namespace DeliveryPersonApp.Droid
             emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
             passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
             signInButton = FindViewById<Button>(Resource.Id.signInButton);
-            registerButton = FindViewById<Button>(Resource.Id.registerButton);
+            registerButton = FindViewById<Button>(Resource.Id.registerSegueButton);     // NB to-register segue button not actual register button
 
             signInButton.Click += SignInButton_Click;
             registerButton.Click += RegisterButton_Click;
@@ -41,10 +43,20 @@ namespace DeliveryPersonApp.Droid
             StartActivity(typeof(RegisterActivity));
         }
 
-        private void SignInButton_Click(object sender, EventArgs e)
+        private async void SignInButton_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-            StartActivity(typeof(TabsActivity));
+            var deliveryPersonId = await DeliveryPerson.Login(emailEditText.Text, passwordEditText.Text);
+            if (!String.IsNullOrEmpty(deliveryPersonId))
+            {
+                Intent intent = new Intent(this, typeof(TabsActivity));   // Intent, for passing values (not needed if just starting Activity)
+                intent.PutExtra("deliveryPersonId", deliveryPersonId);          // key/value passed via Intent to next activity (GetStringExtra from there)
+                StartActivity(typeof(TabsActivity));
+            }
+            else
+            {
+                Toast.MakeText(this, "Sign-In Failure", ToastLength.Long).Show();
+            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
