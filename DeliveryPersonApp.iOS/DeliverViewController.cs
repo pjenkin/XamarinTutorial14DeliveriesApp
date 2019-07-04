@@ -5,11 +5,11 @@ using UIKit;
 
 namespace DeliveryPersonApp.iOS
 {
-    public partial class PickupViewController : UIViewController
+    public partial class DeliverViewController : UIViewController
     {
         public Delivery delivery;
 
-        public PickupViewController (IntPtr handle) : base (handle)
+        public DeliverViewController (IntPtr handle) : base (handle)
         {
         }
     }

@@ -130,6 +130,10 @@
     <Compile Include="DeliveringTableViewController.designer.cs">
       <DependentUpon>DeliveringTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeliverViewController.cs" />
+    <Compile Include="DeliverViewController.designer.cs">
+      <DependentUpon>DeliverViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainTabBarController.cs" />
