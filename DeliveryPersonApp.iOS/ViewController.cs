@@ -12,7 +12,7 @@ namespace DeliveryPersonApp.iOS
 
         public ViewController (IntPtr handle) : base (handle)
         {
-            signInButton.TouchUpInside += SignInButton_TouchUpInside;
+            ////signInButton.TouchUpInside += SignInButton_TouchUpInside;
             // registerSegueButton.TouchUpInside += RegisterSegueButton_TouchUpInside;
             // RegisterSegueButton_TouchUpInside not actually needed as navigation handled adequately in segue
         }
@@ -68,6 +68,11 @@ namespace DeliveryPersonApp.iOS
         {
             base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            signInButton.TouchUpInside += SignInButton_TouchUpInside;
+            // registerSegueButton.TouchUpInside += RegisterSegueButton_TouchUpInside;
+            // RegisterSegueButton_TouchUpInside not actually needed as navigation handled adequately in segue
+
         }
 
         public override void DidReceiveMemoryWarning ()
