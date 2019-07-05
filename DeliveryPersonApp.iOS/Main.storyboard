@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="577" style="IBUITableViewCellStyleSubtitle" textLabel="2393" detailTextLabel="2394">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="577" style="IBUITableViewCellStyleSubtitle" textLabel="2393" detailTextLabel="2394" reuseIdentifier="deliveringCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="577" id="578">
@@ -228,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="588" style="IBUITableViewCellStyleSubtitle" textLabel="2713" detailTextLabel="2714">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="588" style="IBUITableViewCellStyleSubtitle" textLabel="2713" detailTextLabel="2714" reuseIdentifier="waitingCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="588" id="589">
@@ -276,7 +276,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="599" style="IBUITableViewCellStyleSubtitle" textLabel="3033" detailTextLabel="3034">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="599" style="IBUITableViewCellStyleSubtitle" textLabel="3033" detailTextLabel="3034" reuseIdentifier="deliveredCell">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="599" id="600">
@@ -325,7 +325,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="3616" translatesAutoresizingMaskIntoConstraints="NO">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="3616" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="0.0" y="65" width="320" height="366"/>
                             </mapView>
                         </subviews>
@@ -336,6 +336,13 @@
                             <constraint id="3624" firstItem="3616" firstAttribute="bottom" secondItem="1369" secondAttribute="top"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Pick Up" id="4263"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pickupBarButtonItem" destination="4263" id="name-outlet-4263"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1373" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,6 +373,13 @@
                             <constraint id="3615" firstItem="3605" firstAttribute="top" secondItem="1375" secondAttribute="bottom" constant="2"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Deliver" id="4262"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="deliverBarButtonItem" destination="4262" id="name-outlet-4262"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1380" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
