@@ -19,6 +19,7 @@ namespace DeliveryPersonApp.Droid
     {
 
         List<Delivery> deliveries;
+        string deliveryPersonId;
 
         public async override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,7 +29,8 @@ namespace DeliveryPersonApp.Droid
 
             deliveries = new List<Delivery>();
 
-            var userId = (Activity as TabsActivity).deliveryPersonId; // use Fragment's inherited Activity to get (deliveryPersonId) member containing data passed to parent TabsActivity
+            // var userId = (Activity as TabsActivity).deliveryPersonId; // use Fragment's inherited Activity to get (deliveryPersonId) member containing data passed to parent TabsActivity
+            deliveryPersonId = (Activity as TabsActivity).deliveryPersonId; // use Fragment's inherited Activity to get (deliveryPersonId) member containing (delivery Person 's Id) data passed to parent TabsActivity
             deliveries = await Delivery.GetWaiting();
             ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItem1, deliveries);
         }

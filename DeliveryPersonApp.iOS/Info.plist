@@ -44,5 +44,7 @@
     </array>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need to access your location to record the delivery data</string>
 </dict>
 </plist>

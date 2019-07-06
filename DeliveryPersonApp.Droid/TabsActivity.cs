@@ -30,7 +30,7 @@ namespace DeliveryPersonApp.Droid
             // Create your application here
             SetContentView(Resource.Layout.Tabs);       // use our own layout - to contain tabs for displaying Delivered, Delivering & Waiting fragments
 
-            deliveryPersonId = Intent.GetStringExtra("deliveryPersonID");   // get Intent.PutExtra'd string
+            deliveryPersonId = Intent.GetStringExtra("deliveryPersonId");   // get Intent.PutExtra'd string
 
             tabLayout = FindViewById<TabLayout>(Resource.Id.mainTabLayout);
             tabLayout.TabSelected += TabLayout_TabSelected;     // += TAB for boilerplate event handler

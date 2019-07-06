@@ -51,7 +51,8 @@ namespace DeliveryPersonApp.Droid
             {
                 Intent intent = new Intent(this, typeof(TabsActivity));   // Intent, for passing values (not needed if just starting Activity)
                 intent.PutExtra("deliveryPersonId", deliveryPersonId);          // key/value passed via Intent to next activity (GetStringExtra from there)
-                StartActivity(typeof(TabsActivity));
+                //StartActivity(typeof(TabsActivity));
+                StartActivity(intent);                                  // must use the PutExtra'd intent to pass on data
             }
             else
             {

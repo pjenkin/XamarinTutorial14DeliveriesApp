@@ -25,7 +25,7 @@ namespace DeliveriesApp.Model
             return person;
         }
 
-        public static async Task<string> Login(string email, string password)
+        public async static Task<string> Login(string email, string password)
         {
             // bool result = false;
             string userId = string.Empty;
@@ -68,7 +68,7 @@ namespace DeliveriesApp.Model
                 }
             }
             // return result;
-            return userId;
+            return userId ?? string.Empty;
         }
 
 
