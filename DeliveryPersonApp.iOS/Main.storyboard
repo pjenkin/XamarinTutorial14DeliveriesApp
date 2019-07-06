@@ -213,7 +213,7 @@
                             <outlet property="delegate" destination="573" id="576"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="876"/>
+                    <tabBarItem key="tabBarItem" title="Delivering" id="876"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="579" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,7 +261,7 @@
                             <outlet property="delegate" destination="584" id="587"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="980"/>
+                    <tabBarItem key="tabBarItem" title="Waiting" id="980"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="590" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,7 +306,7 @@
                             <outlet property="delegate" destination="595" id="598"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="1136"/>
+                    <tabBarItem key="tabBarItem" title="Delivered" id="1136"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="601" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,13 +336,15 @@
                             <constraint id="3624" firstItem="3616" firstAttribute="bottom" secondItem="1369" secondAttribute="top"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Pick Up" id="4263"/>
-                    </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="pickupBarButtonItem" destination="4263" id="name-outlet-4263"/>
+                        <outlet property="pickupMapView" destination="3616" id="name-outlet-3616"/>
+                        <outlet property="pickupBarButtonItem" destination="7316" id="name-outlet-7316"/>
                     </connections>
+                    <navigationItem title="Title" id="6329" key="navigationItem">
+                        <barButtonItem key="backBarButtonItem" title=" " id="6794"/>
+                        <barButtonItem key="rightBarButtonItem" title="Pick Up" id="7316"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1373" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,13 +375,15 @@
                             <constraint id="3615" firstItem="3605" firstAttribute="top" secondItem="1375" secondAttribute="bottom" constant="2"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Deliver" id="4262"/>
-                    </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="deliverBarButtonItem" destination="4262" id="name-outlet-4262"/>
+                        <outlet property="deliverMapView" destination="3605" id="name-outlet-3605"/>
+                        <outlet property="deliverBarButtonItem" destination="7497" id="name-outlet-7497"/>
                     </connections>
+                    <navigationItem title="Title" id="6328" key="navigationItem">
+                        <barButtonItem key="backBarButtonItem" title=" " id="6793"/>
+                        <barButtonItem key="rightBarButtonItem" title="Deliver" id="7497"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1380" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,6 +24,14 @@ namespace DeliveryPersonApp.iOS
 
         }
 
+        public async override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            deliveries = new List<Delivery>();      // initialise member data (zero deliveries to start with)
+
+        }
+
         // 2 main overrides for TableViewVCs - rowsInSection and GetCell
 
         public override nint RowsInSection(UITableView tableView, nint section)

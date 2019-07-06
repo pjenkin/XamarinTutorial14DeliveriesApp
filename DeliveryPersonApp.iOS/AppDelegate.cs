@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveryPersonApp.iOS
@@ -20,6 +21,8 @@ namespace DeliveryPersonApp.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            CurrentPlatform.Init(); // V important - must include this line for Azure Mobile to avoid crash at start - 25-184
 
             return true;
         }
