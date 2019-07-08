@@ -6,6 +6,8 @@ using DeliveriesApp.Model;
 
 namespace DeliveriesApp.iOS
 {
+
+    // This is the 'entry' or 'landing' point of the app - a sign-in page for persons already registered
     public partial class ViewController : UIViewController
     {
 
