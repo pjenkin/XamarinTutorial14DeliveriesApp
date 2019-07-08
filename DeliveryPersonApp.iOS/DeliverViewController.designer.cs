@@ -22,6 +22,14 @@ namespace DeliveryPersonApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         MapKit.MKMapView deliverMapView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIToolbar deliverMapViewToolbar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem navigateBarButtonItem { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (deliverBarButtonItem != null) {
@@ -32,6 +40,16 @@ namespace DeliveryPersonApp.iOS
             if (deliverMapView != null) {
                 deliverMapView.Dispose ();
                 deliverMapView = null;
+            }
+
+            if (deliverMapViewToolbar != null) {
+                deliverMapViewToolbar.Dispose ();
+                deliverMapViewToolbar = null;
+            }
+
+            if (navigateBarButtonItem != null) {
+                navigateBarButtonItem.Dispose ();
+                navigateBarButtonItem = null;
             }
         }
     }

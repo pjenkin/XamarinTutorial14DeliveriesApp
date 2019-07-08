@@ -23,7 +23,24 @@ namespace DeliveryPersonApp.iOS
 
             deliverBarButtonItem.Clicked += DeliverBarButtonItem_Clicked;
 
+            navigateBarButtonItem.Clicked += NavigateBarButtonItem_Clicked;
+
             PrepareMap();
+        }
+
+        private void NavigateBarButtonItem_Clicked(object sender, EventArgs e)
+        {
+            // throw new NotImplementedException();
+
+            // Add directions capability
+
+            var coordinates = new CLLocationCoordinate2D(delivery.DestinationLatitude, delivery.DestinationLongitude);
+
+            var mapItem = new MKMapItem(new MKPlacemark(coordinates));
+
+            mapItem.Name = "Pick up here";
+
+            mapItem.OpenInMaps();
         }
 
         private void PrepareMap()

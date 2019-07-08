@@ -328,6 +328,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="3616" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="0.0" y="65" width="320" height="366"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7848" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="384" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Get Directions" id="7849"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="3621" firstAttribute="leadingMargin" secondItem="3616" secondAttribute="leading" constant="16"/>
@@ -340,6 +347,8 @@
                     <connections>
                         <outlet property="pickupMapView" destination="3616" id="name-outlet-3616"/>
                         <outlet property="pickupBarButtonItem" destination="7316" id="name-outlet-7316"/>
+                        <outlet property="pickupMapViewToolbar" destination="7848" id="name-outlet-7848"/>
+                        <outlet property="navigateBarButtonItem" destination="7849" id="name-outlet-7849"/>
                     </connections>
                     <navigationItem title="Title" id="6329" key="navigationItem">
                         <barButtonItem key="backBarButtonItem" title=" " id="6794"/>
@@ -365,6 +374,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="3605" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="66" width="320" height="365"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7850" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="387" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Get Directions" id="7851"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="3608" firstAttribute="trailing" secondItem="3605" secondAttribute="trailing" firstItem="1379"/>
@@ -379,6 +395,8 @@
                     <connections>
                         <outlet property="deliverMapView" destination="3605" id="name-outlet-3605"/>
                         <outlet property="deliverBarButtonItem" destination="7497" id="name-outlet-7497"/>
+                        <outlet property="navigateBarButtonItem" destination="7851" id="name-outlet-7851"/>
+                        <outlet property="deliverMapViewToolbar" destination="7850" id="name-outlet-7850"/>
                     </connections>
                     <navigationItem title="Title" id="6328" key="navigationItem">
                         <barButtonItem key="backBarButtonItem" title=" " id="6793"/>
