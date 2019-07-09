@@ -15,7 +15,8 @@ using DeliveriesApp.Model;
 
 namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true, Name = "DeliveryPersonApp.Droid.DeliveryPersonApp.Droid.MainActivity", Exported = true)]
+    [MetaData ("android.app.shortcuts", Resource = "@xml/shortcuts")]
     public class MainActivity : AppCompatActivity
     {
         EditText emailEditText, passwordEditText;
@@ -34,8 +35,14 @@ namespace DeliveryPersonApp.Droid
             cancellation = new Android.Support.V4.OS.CancellationSignal();
             preferences = PreferenceManager.GetDefaultSharedPreferences(this);
 
+            try
+            {
+                SetContentView(Resource.Layout.activity_main);
+            }
+            catch (Exception exc)
+            {
 
-            SetContentView(Resource.Layout.activity_main);
+            }
 
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -50,6 +57,16 @@ namespace DeliveryPersonApp.Droid
 
             signInButton.Click += SignInButton_Click;
             registerButton.Click += RegisterButton_Click;
+
+            if (!string.IsNullOrEmpty(Intent?.Data?.LastPathSegment))      // check for shortcut intent - check url/route
+            {
+                if (Intent.Data.LastPathSegment == "register")
+                {
+                    // If shortcut opened this activity via an intent, do the same as as if Register button clicked
+                    StartActivity(typeof(RegisterActivity));
+
+                }
+            }
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

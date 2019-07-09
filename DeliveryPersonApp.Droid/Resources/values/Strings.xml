@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">DeliveryPersonApp.Droid</string>
     <string name="action_settings">Settings</string>
+    <string name="shortcut_short">Register</string>
+    <string name="shortcut_long">Register new user</string>
 </resources>

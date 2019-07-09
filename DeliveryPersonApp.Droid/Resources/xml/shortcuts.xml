@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+  <shortcut
+    android:shortcutId="registerShortcut"
+    android:enabled="true"
+    android:shortcutShortLabel="@string/shortcut_short"
+    android:shortcutLongLabel="@string/shortcut_long">
+    <intent
+      android:targetClass="DeliveryPersonApp.Droid.DeliveryPersonApp.Droid.MainActivity"
+      android:targetPackage="DeliveryPersonApp.Droid.DeliveryPersonApp.Droid"
+      android:action="android.intent.action.VIEW"
+      android.data="register"/>
+    <categories android:name="android.shortcut.conversation" />
+    <!-- NB capability of navigating *back* to not-yet-visited login (from shortcut Register) by using targetClass attribute -->
+  </shortcut>
+</shortcuts>
