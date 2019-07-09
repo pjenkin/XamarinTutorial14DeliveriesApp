@@ -66,7 +66,27 @@ namespace DeliveryPersonApp.iOS
         private async void PickupBarButtonItem_Clicked(object sender, EventArgs e)
         {
             // throw new NotImplementedException();
-            await Delivery.MarkAsPickedUp(delivery, deliveryPersonId);      // inform db that this delivery person picked up this delivery package
+
+            var haptic = new UINotificationFeedbackGenerator();
+            haptic.Prepare();       // prepare system for haptic feedback
+
+            bool result = await Delivery.MarkAsPickedUp(delivery, deliveryPersonId);      // inform db that this delivery person picked up this delivery package
+
+            UIAlertController alert = null;
+
+            if (result)
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Success);
+                alert = UIAlertController.Create("Success", "Delivery set as picked up", UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Error);
+                alert = UIAlertController.Create("Pickup record failure", "Please try again", UIAlertControllerStyle.Alert);
+            }
+
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            PresentViewController(alert, true, null);
         }
 
    
