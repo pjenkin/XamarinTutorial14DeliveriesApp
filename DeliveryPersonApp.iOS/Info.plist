@@ -47,6 +47,6 @@
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>We need to access your location to record the delivery data</string>
     <key>NSFaceIDUsageDescription</key>
-    <string>We need to use biometrics to make signing-in easier</string>
+    <string>We need to use biometrics (face recognition) to make signing-in easier</string>
 </dict>
 </plist>
