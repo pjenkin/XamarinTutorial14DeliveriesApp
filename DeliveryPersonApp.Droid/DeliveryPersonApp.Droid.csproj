@@ -59,6 +59,7 @@
     <Compile Include="DeliverActivity.cs" />
     <Compile Include="DeliveredFragment.cs" />
     <Compile Include="DeliveringFragment.cs" />
+    <Compile Include="Helpers\AuthenticationCallback.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PickupActivity.cs" />
     <Compile Include="RegisterActivity.cs" />
