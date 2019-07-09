@@ -60,6 +60,8 @@ namespace DeliveryPersonApp.Droid
 
         private async void SignInButton_Click(object sender, EventArgs e)
         {
+            //throw new NotImplementedException();
+
             // Bespoke method to check whether device can read fingerprints, to see whether local device (non-server db querying) biometric authentication can be used
             bool canUseFingerprint = CanUseFingerprint();
 
@@ -67,16 +69,20 @@ namespace DeliveryPersonApp.Droid
             {
                 LogUserIn();
             }
+            else
+            {
+                //var deliveryPersonId = await DeliveryPerson.Login(emailEditText.Text, passwordEditText.Text);
+                deliveryPersonId = await DeliveryPerson.Login(emailEditText.Text, passwordEditText.Text);
+            }
 
-            //throw new NotImplementedException();
-            //var deliveryPersonId = await DeliveryPerson.Login(emailEditText.Text, passwordEditText.Text);
-            deliveryPersonId = await DeliveryPerson.Login(emailEditText.Text, passwordEditText.Text);
 
 
             if (!String.IsNullOrEmpty(deliveryPersonId))
             {
+                //preferences = PreferenceManager.GetDefaultSharedPreferences(this);
+
                 var preferencesEditor = preferences.Edit();              // so as to save preferences, for recording the login name
-                preferencesEditor.PutString("developerId", deliveryPersonId);
+                preferencesEditor.PutString("deliveryPersonId", deliveryPersonId);
                 preferencesEditor.Apply();                              // persist on the device the login name/id
 
                 Intent intent = new Intent(this, typeof(TabsActivity));   // Intent, for passing values (not needed if just starting Activity)
@@ -141,7 +147,7 @@ namespace DeliveryPersonApp.Droid
                     if (fingerprintManager.HasEnrolledFingerprints)     // if user has recorded her/his print on device
                     {
                         var permissionResult = ContextCompat.CheckSelfPermission(this, Manifest.Permission.UseFingerprint);
-                        // Request permission from current user to use fingerprints
+                        // Check permission from current user to use fingerprints
                         if (permissionResult == global::Android.Content.PM.Permission.Granted)
                         {
                             return true;
