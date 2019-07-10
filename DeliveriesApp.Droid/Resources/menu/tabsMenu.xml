@@ -9,6 +9,12 @@
         android:text="Add"
         android:icon="@mipmap/ic_action_add_circle_outline"
    />
+  <item android:id="@+id/action_subscribe"
+       app:showAsAction="always"
+      android:text="Subscribe"
+      android:icon="@mipmap/ic_action_add_circle_outline"
+   />
+
   <!-- android:icon="@mipmap/ic_action_add_circle_outline" -->
   <!-- 7:45 19-157 actually using support libraries ur no? no error shown here -->
 </menu>
