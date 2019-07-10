@@ -177,13 +177,17 @@
                         <segue id="13278" destination="13116" kind="relationship" relationship="viewControllers"/>
                         <segue id="13479" destination="13283" kind="relationship" relationship="viewControllers"/>
                         <segue id="13710" destination="13484" kind="relationship" relationship="viewControllers"/>
+                        <outlet property="subscriptionBarButtonItem" destination="22153" id="name-outlet-22153"/>
                     </connections>
                     <navigationItem id="14585" key="navigationItem" title="-">
-                        <barButtonItem key="rightBarButtonItem" id="14586" systemItem="add">
-                            <connections>
-                                <segue id="14871" destination="14576" kind="show"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem id="14586" systemItem="add">
+                                <connections>
+                                    <segue id="14871" destination="14576" kind="show"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem id="22153" title="Subscribe"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11269" userLabel="First Responder" sceneMemberID="firstResponder"/>
