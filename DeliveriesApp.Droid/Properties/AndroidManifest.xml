@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="DeliveriesApp.Droid.DeliveriesApp.Droid" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="27" />
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="27" />
 	<!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
@@ -21,9 +21,9 @@
 	<!-- PNJ posting these after last permission, as per video, and altering PACKAGE_NAME to suit -->
 	<!-- Permission to receive remote notifications from Google Play Services -->
 	<!-- Notice here that we have the package name of our application as a prefix on the permissions. -->
-<!-- Billing permission for in-app purchase 28-202 -->
-  <uses-permission android:name="com.android.vending.BILLING" />
-  <!--
+	<!-- Billing permission for in-app purchase 28-202 -->
+	<uses-permission android:name="com.android.vending.BILLING" />
+	<!--
   <uses-permission android:name="PACKAGE_NAME.permission.MAPS_RECEIVE" />
   <permission android:name="PACKAGE_NAME.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
   -->

@@ -49,9 +49,11 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Peter Jenkin (3TVT39HT56)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Peter Jenkin Delivery Person App PP</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

@@ -2585,6 +2585,9 @@ namespace DeliveriesApp.Droid
 			// aapt resource value: 0x7f0b00ce
 			public const int action_settings = 2131427534;
 			
+			// aapt resource value: 0x7f0b00d0
+			public const int action_subscribe = 2131427536;
+			
 			// aapt resource value: 0x7f0b00b3
 			public const int action_text = 2131427507;
 			
