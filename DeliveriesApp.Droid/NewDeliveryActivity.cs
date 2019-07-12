@@ -31,6 +31,8 @@ namespace DeliveriesApp.Droid
         LocationManager locationManager;        // must be initialised from service
         GoogleMap originMap, destinationMap;    // since Map member is absent from MapFragment in 2019
 
+        // MyMap is in this project, but is not used as I couldn't get MyMap to work (qv) as per https://www.udemy.com/complete-xamarin-developer-course-ios-and-android/learn/lecture/8438130#questions/7592218
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -78,8 +80,8 @@ namespace DeliveriesApp.Droid
             // could refactor this GetMapAsync stuff as used at least twice in class
             //            MyMap originMap = new MyMap();
             //            MyMap destinationMap = new MyMap();
-            MyMap originMap = new MyMap();
-            MyMap destinationMap = new MyMap();
+            // MyMap originMap = new MyMap();       // would instantiate MyMap here, but couldn't get MyMap to work (qv)
+            // MyMap destinationMap = new MyMap();
 
             originMapFragment.GetMapAsync(this);
             destinationMapFragment.GetMapAsync(this);
@@ -148,8 +150,8 @@ namespace DeliveriesApp.Droid
             latitude = location.Latitude;
             longitude = location.Longitude;
 
-            MyMap originMap = new MyMap();
-            MyMap destinationMap = new MyMap();
+            // MyMap originMap = new MyMap();
+            // MyMap destinationMap = new MyMap();
             originMapFragment.GetMapAsync(this);  // activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
             destinationMapFragment.GetMapAsync(this);
 //            originMapFragment.GetMapAsync(originMap);  // activity must implement IOnMapReadyCallback - NB not await'd since a Java object handled by Java, not C#
