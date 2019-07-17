@@ -3439,13 +3439,16 @@ namespace DeliveriesApp.Droid
 			public const int ic_action_add_circle_outline = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int ic_launcher = 2130903041;
+			public const int ic_attach_money = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ic_launcher_foreground = 2130903042;
+			public const int ic_launcher = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_launcher_round = 2130903043;
+			public const int ic_launcher_foreground = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int ic_launcher_round = 2130903044;
 			
 			static Mipmap()
 			{
